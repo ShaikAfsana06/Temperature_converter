@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stylish Temperature Converter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="title">
+        <div class="logo">T°</div>
+        <div>
+          <h1>Temperature Converter</h1>
+          <p class="lead">Convert between Celsius, Fahrenheit, Kelvin and Réaumur instantly.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="controls">
+          <input id="value" class="big" type="number" placeholder="Enter temperature" value="25" />
+
+          <select id="fromUnit">
+            <option value="c">Celsius (°C)</option>
+            <option value="f">Fahrenheit (°F)</option>
+            <option value="k">Kelvin (K)</option>
+            <option value="r">Réaumur (°Ré)</option>
+          </select>
+
+          <select id="toUnit">
+            <option value="f">Fahrenheit (°F)</option>
+            <option value="c">Celsius (°C)</option>
+            <option value="k">Kelvin (K)</option>
+            <option value="r">Réaumur (°Ré)</option>
+          </select>
+        </div>
+
+        <div class="result">
+          <div class="res-left">
+            <div class="res-value" id="result">—</div>
+            <div class="res-sub" id="detail">Enter a value and press Convert</div>
+          </div>
+          <div class="btns">
+            <button id="convertBtn">Convert</button>
+            <button class="ghost" id="swapBtn">Swap</button>
+            <button class="ghost" id="clearBtn">Clear</button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <div class="small-muted">Precision: <span id="precisionText">2</span> decimals</div>
+          <input id="precision" type="range" min="0" max="6" step="1" value="2" style="flex:1;min-width:120px" />
+        </div>
+      </div>
+
+      <footer class="small">Tip: Kelvin never goes below 0. Negative temperatures are allowed in Celsius and Fahrenheit.</footer>
+    </div>
+
+    <div class="side">
+      <div class="card thermo">
+        <div class="thermometer">
+          <div style="height:12px"></div>
+          <div class="mercury" id="mercury" style="height:60px"></div>
+          <div class="bulb"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="hint">How it works</div>
+        <p class="small-muted">The converter normalizes the input to Celsius internally, then converts to the target unit. Use the slider to change decimal precision.</p>
+        <div style="height:10px"></div>
+        <div class="hint">Quick presets</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="ghost" data-val="0" data-from="c" data-to="f">0°C → °F</button>
+          <button class="ghost" data-val="100" data-from="c" data-to="f">100°C → °F</button>
+          <button class="ghost" data-val="32" data-from="f" data-to="c">32°F → °C</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

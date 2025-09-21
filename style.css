@@ -1,0 +1,68 @@
+:root{
+  --bg:#0f1724;
+  --accent1:#7c3aed;
+  --accent2:#06b6d4;
+  --glass: rgba(255,255,255,0.04);
+  --muted: #9aa4b2;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Inter, sans-serif;
+  background: var(--bg);
+  color:#e6eef6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+
+.wrap{
+  width:100%;
+  max-width:920px;
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:28px;
+}
+@media (max-width:900px){ .wrap{grid-template-columns:1fr;} }
+
+.hero{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:16px;
+  padding:28px;
+}
+.title{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+.logo{width:58px;height:58px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:700;font-family:'Roboto Slab';font-size:20px;color:white;}
+h1{font-size:20px;margin:0}
+p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;}
+input[type=number], select{
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:12px 14px;border-radius:10px;color:inherit;font-size:15px;min-width:140px;
+}
+.big{flex:1;min-width:200px}
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:18px;border-radius:12px;
+}
+
+.result{margin-top:18px;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(124,58,237,0.06), rgba(6,182,212,0.03));display:flex;justify-content:space-between;}
+.res-value{font-size:26px;font-weight:700;font-family:'Roboto Slab';}
+.res-sub{color:var(--muted);font-size:13px}
+
+button{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  border:none;padding:10px 14px;border-radius:10px;color:white;font-weight:600;cursor:pointer;
+}
+button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--muted)}
+
+.thermo{height:220px;display:grid;place-items:center;}
+.thermometer{width:84px;height:170px;border-radius:44px;background:#071024;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:12px;}
+.mercury{width:32px;background:linear-gradient(180deg,var(--accent1),var(--accent2));border-radius:20px;transition:height .7s;}
+.bulb{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent1),var(--accent2));margin-top:10px;}
+
+.small-muted{font-size:13px;color:var(--muted)}
